@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".LoginActivity">
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fillViewport="true">-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+    <ImageView
+        android:id="@+id/propIllustrationImg"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_centerHorizontal="true"
+        android:paddingStart="24dp"
+        android:layout_marginTop="15dp"
+        android:paddingEnd="24dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_property_illustration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appNameTv" />
+
+    <TextView
+        android:id="@+id/appNameTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="  BSRNow"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    android:text="  Real Estate"-->
+
+    <LinearLayout
+        android:layout_width="290dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/propIllustrationImg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/propIllustrationImg"
+        app:layout_constraintVertical_bias="0.284">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/usernameEdtx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/person_icon"
+                android:drawablePadding="7dp"
+                android:hint="Username"
+                android:textColor="#e0dede"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#e0dede">
+
+            <EditText
+                android:id="@+id/passwordEdtx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/lock_icon"
+                android:drawablePadding="7dp"
+                android:hint="Password"
+                android:textColor="#e0dede"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/tab_background"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/signUpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/selected_tab_background"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Login As Guest!"
+            android:id="@+id/guest_login_testview"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp">
+
+        </TextView>
+
+        <ProgressBar
+            android:id="@+id/loginProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"/>
+
+
+    </LinearLayout>
+
+    <!--        </RelativeLayout>-->
+
+<!--    </ScrollView>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

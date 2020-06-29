@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:showIn="navigation_view">
+
+        <group android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/home"
+                android:icon="@drawable/ic_home_black_24dp"
+                android:title="Home" />
+
+            <item
+                android:id="@+id/buyProp"
+                android:icon="@drawable/buy_prop_icon"
+                android:title="Buy Properties" />
+
+            <item
+                android:id="@+id/rentProp"
+                android:icon="@drawable/sale_icon"
+                android:title="Rent Properties" />
+
+            <item
+                android:id="@+id/investInProp"
+                android:icon="@drawable/invest_in_prop_icon"
+                android:title="Invest In Property" />
+
+            <item
+                android:id="@+id/newProject"
+                android:icon="@drawable/new_proj_icon"
+                android:title="New Projects" />
+
+            <item
+                android:id="@+id/exploreLocalities"
+                android:icon="@drawable/explore_localities_icon"
+                android:title="Explore Localities" />
+
+        </group>
+
+
+
+        <item android:title="Sell/Rent Your Property">
+
+            <menu>
+
+                <group android:checkableBehavior="single">
+
+                    <item
+                        android:id="@+id/sellProp"
+                        android:icon="@drawable/sale_icon"
+                        android:title="Sell Property" />
+
+                    <item
+                        android:id="@+id/advertise"
+                        android:icon="@drawable/advrt_on_app_icon"
+                        android:title="Advertise With Us" />
+
+                </group>
+
+            </menu>
+
+        </item>
+
+
+
+        <item android:title="Tools And Advise">
+
+            <menu>
+
+                <group android:checkableBehavior="single">
+
+                    <item
+                        android:id="@+id/propworth"
+                        android:icon="@drawable/propworth_icon"
+                        android:title="Propworth" />
+
+                    <item
+                        android:id="@+id/ratesAndTrends"
+                        android:icon="@drawable/prop_rates_icon"
+                        android:title="Rates And Trends" />
+
+                    <item
+                        android:id="@+id/forum"
+                        android:icon="@drawable/forum_icon"
+                        android:title="Forum" />
+
+                    <item
+                        android:id="@+id/emiCal"
+                        android:icon="@drawable/emi_cal_icon"
+                        android:title="EMI Calculator" />
+
+                    <item
+                        android:id="@+id/loan"
+                        android:icon="@drawable/loan_icon"
+                        android:title="Loan Eligibility" />
+
+                    <item
+                        android:id="@+id/propindex"
+                        android:icon="@drawable/propindex_icon"
+                        android:title="Propindex" />
+
+                </group>
+
+            </menu>
+
+        </item>
+
+
+        <item android:title="Property Services">
+
+            <menu>
+
+                <group android:checkableBehavior="single">
+
+                    <item
+                        android:id="@+id/propValuation"
+                        android:icon="@drawable/prop_valuation_icon"
+                        android:title="Property Valuation" />
+
+                    <item
+                        android:id="@+id/advocateCall"
+                        android:icon="@drawable/advocate_cal_icon"
+                        android:title="Advocate On Call" />
+
+                    <item
+                        android:id="@+id/propAstrology"
+                        android:icon="@drawable/prop_astrology"
+                        android:title="Property Astrology" />
+
+                </group>
+            </menu>
+        </item>
+
+
+
+        <item android:title="We Listen">
+            <menu>
+                <group android:checkableBehavior="single">
+
+                    <item
+                        android:id="@+id/feedback"
+                        android:icon="@drawable/feedback_icon"
+                        android:title="Feedback" />
+
+                    <item
+                        android:id="@+id/rateUs"
+                        android:icon="@drawable/rate_us_icon"
+                        android:title="Rate Us" />
+
+                    <item
+                        android:id="@+id/share"
+                        android:icon="@drawable/ic_share_black_24dp"
+                        android:title="Share" />
+
+                    <item
+                        android:id="@+id/setAlerts"
+                        android:icon="@drawable/ic_add_alert_black_24dp"
+                        android:title="Set Alerts" />
+
+                    <item
+                        android:id="@+id/settings"
+                        android:icon="@drawable/settings_icon_drawer"
+                        android:title="Settings" />
+
+                    <item
+                        android:id="@+id/login"
+                        android:icon="@drawable/login_icon"
+                        android:title="Login" />
+
+                </group>
+            </menu>
+        </item>
+
+        <!--<item android:title="Communicate">
+            <menu>
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/menu_share" />
+                <item
+                    android:id="@+id/nav_send"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/menu_send" />
+            </menu>
+        </item>-->
+
+    </menu>
+
+

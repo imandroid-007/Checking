@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.realestate">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+
+<!--    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />-->
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ContactAndEnquiry.EnquiryActivity"></activity>
+        <activity
+            android:name=".ContactAndEnquiry.ContactPropListedOwnerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Projects.ProjectsPropTypeActivity" />
+        <activity android:name=".Location.LocationMultSelectionActivity" />
+        <activity android:name=".RealEstate.RentPropTypeActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".Maps.MapsActivity"
+            android:label="@string/title_activity_maps" />
+
+        <activity android:name=".UploadDocuments.UploadDocumentsActivity"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <activity
+            android:name=".RealEstate.PropTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Guest_login" />
+        <activity
+            android:name=".ContactUsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ScrollingActivityTest"
+            android:label="@string/title_activity_scrolling_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OTP_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <receiver
+            android:name=".OTPReceiver.SmsBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".AccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CollapsingTheme" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadMenuFragmentsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".RealEstate.PropDetailsActivity"
+            android:theme="@style/CollapsingTheme" />
+        <activity android:name=".TempProjectsActivity" />
+        <activity android:name=".RealEstate.InvestInPropActivity" />
+        <activity
+            android:name=".RealEstate.SellPropActivity"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".ActivityRealEstate"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

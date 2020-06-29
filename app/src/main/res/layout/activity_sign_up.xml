@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/gradient">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/welcomeTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome!"
+                    android:textColor="@color/black"
+                    android:paddingBottom="10dp"
+                    android:textSize="30sp"/>
+
+                <TextView
+                    android:id="@+id/personalDetailsTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Personal Details"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register as"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <RadioGroup
+                    android:id="@+id/postRdGrp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/custRdBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="Customer" />
+
+                    <RadioButton
+                        android:id="@+id/sellerRdBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="Seller" />
+
+                    <RadioButton
+                        android:id="@+id/agentRdBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="Agent" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/noteTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You can buy, rent or invest in projects by registering as a customer."
+                    android:paddingStart="6dp"
+                    android:textSize="12sp"
+                    android:paddingTop="5dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInput_fullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <EditText
+                        android:id="@+id/full_name_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="15dp"
+                        android:drawableLeft="@drawable/name_icon"
+                        android:drawablePadding="7dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:hint="Full Name"
+                        android:maxLines="1"
+                        android:inputType="textPersonName"
+                        android:paddingStart="8dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <EditText
+                        android:id="@+id/email_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="15dp"
+                        android:hint="Email Address"
+                        android:drawableLeft="@drawable/email_icon"
+                        android:drawablePadding="5dp"
+                        android:textColor="#e0dede"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:paddingStart="8dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/popup_fragment_container2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <EditText
+                        android:id="@+id/mobile_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="15dp"
+                        android:drawableLeft="@drawable/smartphone_icon"
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white"
+                        android:hint="Mobile Number"
+                        android:textColor="#e0dede"
+                        android:inputType="number"
+                        android:paddingStart="8dp"/>
+
+<!--                    android:maxLength="10"-->
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/lock_icon"
+                        android:paddingTop="15dp"
+                        android:paddingStart="5dp"
+                        android:paddingBottom="3dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#e0dede">
+
+                        <EditText
+                            android:id="@+id/password_edt"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="15dp"
+                            android:drawableLeft="@drawable/lock_icon"
+                            android:textSize="15sp"
+                            android:textColorHint="@color/white"
+                            android:hint="Password"
+                            android:textColor="#e0dede"
+                            android:inputType="textPassword"
+                            android:paddingStart="34dp"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnSignUp"
+                        android:layout_width="210dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/tab_background"
+                        android:layout_centerHorizontal="true"
+                        android:text="Register"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/loading_id"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/messageTv_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/singnIn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="7dp"
+                android:text="Sign In"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </RelativeLayout>-->
+
+
+</RelativeLayout>

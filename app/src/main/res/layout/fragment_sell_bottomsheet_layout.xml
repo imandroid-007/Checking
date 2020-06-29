@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/sell_bottomsheet"
+    tools:context=".ActivityRealEstate"
+    app:behavior_hideable="true"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+<!--    ededed-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/filterTopLin"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/closeFiltersLin"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="5dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:padding="3dp"
+                        android:src="@drawable/close_icon_gray" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingStart="7dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Close Filters"
+                            android:textSize="16sp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0.7dp"
+                    android:layout_height="40dp"
+                    android:background="#c0c0c0" />
+
+                <LinearLayout
+                    android:id="@+id/filterBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Clear All"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#c0c0c0" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_below="@+id/filterTopLin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="0dp"
+                android:layout_marginBottom="40dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+
+
+                    <!-- <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="10dp"
+                         android:paddingStart="5dp"
+                         android:text="Property Type"
+                         android:textColor="#000000"
+                         android:textSize="15sp" />
+
+                     <androidx.recyclerview.widget.RecyclerView
+                         android:id="@+id/recyc_propType"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="10dp"
+                         android:nestedScrollingEnabled="false" />-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:paddingStart="5dp"
+                        android:text="Bedrooms"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_bedrooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <!--<LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="vertical">
+
+                         <com.google.android.material.textfield.TextInputLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             app:hintAnimationEnabled="false">
+
+                             <EditText
+                                 android:id="@+id/nameEdtx"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:hint="Name"
+                                 android:imeOptions="actionNext"
+                                 android:inputType="textPersonName"
+                                 android:maxLines="1"
+                                 android:paddingStart="5dp"
+                                 android:singleLine="true"
+                                 android:textSize="14sp" />
+                         </com.google.android.material.textfield.TextInputLayout>
+
+                         <com.google.android.material.textfield.TextInputLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="10dp"
+                             app:hintAnimationEnabled="false">
+
+                             <EditText
+                                 android:id="@+id/emailEdtx"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:hint="Email"
+                                 android:imeOptions="actionNext"
+                                 android:inputType="textEmailAddress"
+                                 android:maxLines="1"
+                                 android:paddingStart="5dp"
+                                 android:singleLine="true"
+                                 android:textSize="14sp" />
+                         </com.google.android.material.textfield.TextInputLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal"
+                             android:layout_marginTop="10dp"
+                             android:gravity="center_vertical">
+
+                             <com.google.android.material.textfield.TextInputLayout
+                                 android:layout_width="0dp"
+                                 android:layout_weight="1"
+                                 android:layout_height="wrap_content">
+
+                                 <EditText
+                                     android:id="@+id/comp_name"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:hint="Mobile Number"
+                                     android:imeOptions="actionDone"
+                                     android:inputType="number"
+                                     android:maxLines="1"
+                                     android:paddingStart="5dp"
+                                     android:singleLine="true"
+                                     android:textSize="14sp"
+                                     android:layout_marginEnd="5dp"/>
+                             </com.google.android.material.textfield.TextInputLayout>
+
+                             <TextView
+                                 android:layout_width="80dp"
+                                 android:layout_height="35dp"
+                                 android:background="@drawable/edtxshape"
+                                 android:text="Verify"
+                                 android:gravity="center"
+                                 android:layout_marginTop="2dp"
+                                 android:textColor="@color/colorPrimary"/>
+
+                         </LinearLayout>
+
+                     </LinearLayout>-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Property Location"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/propLocationEdtx"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableEnd="@drawable/ic_my_location_black_24dp"
+                                android:drawablePadding="5dp"
+                                android:hint="Property Location"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPostalAddress"
+                                android:maxLines="1"
+                                android:paddingStart="5dp"
+                                android:singleLine="true"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Amenities"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_amenities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Facing"
+                        android:textColor="#000000"
+                        android:visibility="gone"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_facing"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <!--<TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:text="Locality/Project"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:layout_marginTop="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"/>-->
+
+                    <!--<TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Bathroom"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_bathroom"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Balcony"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_balcony"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Floor Details"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:id="@+id/total_floor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Total Number of Floor"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingStart="5dp"
+                                android:singleLine="true"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edtxshape"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="7dp">
+
+                        <Spinner
+                            android:id="@+id/floorNoSpin"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp" />
+
+                    </RelativeLayout>
+
+                    <!--<LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:text="Bathroom"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="7dp">
+
+                                <Spinner
+                                    android:id="@+id/bathroomSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:text="Balcony"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="7dp">
+
+                                <Spinner
+                                    android:id="@+id/balconySpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Bathroom"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_bathroom"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Balcony"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_balcony"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Furnishing"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/furnishingRdGrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/unfurnishedRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Unfurnished" />
+
+                        <RadioButton
+                            android:id="@+id/semiFurnRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Semi-Furnished" />
+
+                        <RadioButton
+                            android:id="@+id/fullyFurnRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Fully-Furnished" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Property Area"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/propAreaEdtx"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Property Area"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingStart="5dp"
+                                android:singleLine="true"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edtxshape"
+                            android:paddingEnd="5dp">
+
+                            <Spinner
+                                android:id="@+id/propAreaspn"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--<TextView
+                        android:id="@+id/moreFilters_Tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="More Filters"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />-->
+
+                    <LinearLayout
+                        android:id="@+id/moreFiltersLinLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <!--<TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Project Type"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <Button
+                                android:id="@+id/btnUnderConstr"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="Under Construction"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/btnReadyToMove"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="Ready To Move"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>-->
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="RERA Approved"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <CheckBox
+                            android:id="@+id/reraAprvdPropChkbx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="RERA approved property"
+                            android:layout_marginTop="10dp"/>
+
+                        <CheckBox
+                            android:id="@+id/notApplicableReraChkbx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Not Applicable to RERA" />
+
+                        <!--                        <CheckBox-->
+                        <!--                            android:id="@+id/reraAprvdAgentChkbx"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:text="RERA approved agent"-->
+                        <!--                            android:visibility="gone"/>-->
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="What type of property is it?"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <Button
+                                android:id="@+id/btnUnderConstr"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="Under Construction"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/btnReadyToMove"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="Ready To Move"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Sale Type"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <Button
+                                android:id="@+id/btnSaleNew"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="New"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/btnSaleResale"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="Resale"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Possesion In"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/fromYearPossesSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/toYearPossesSPin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Society"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/edtxshape">
+
+                            <Spinner
+                                android:id="@+id/societySpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:text="Post as"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/youAreRdGrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/ownerRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Owner" />
+
+                        <RadioButton
+                            android:id="@+id/agentRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Agent" />
+
+                        <RadioButton
+                            android:id="@+id/builderRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Builder" />
+
+                    </RadioGroup>
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Owner Name"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/owner_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Owner Name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingStart="5dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Owner Mobile Number"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/owner_mobile_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Owner Mobile Number"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingStart="5dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Price You Expect"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:id="@+id/expectedPriceEdtx"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Enter Price (in INR)"
+                                android:imeOptions="actionNext"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:paddingStart="5dp"
+                                android:singleLine="true"
+                                android:textSize="14sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:id="@+id/pricePerSqft"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Price Per Sqft"
+                                android:imeOptions="actionNext"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:paddingStart="5dp"
+                                android:singleLine="true"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/mntnanceChrgsEdtx"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Maintainance Charges (in INR)"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:paddingStart="5dp"
+                                    android:singleLine="true"
+                                    android:textSize="14sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/mntncChrgsTypeSpn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnPostProp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/tab_background"
+                        android:text="Post Property"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:text="Apply Filters"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

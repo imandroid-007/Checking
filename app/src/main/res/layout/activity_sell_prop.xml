@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ededed"
+    tools:context=".ActivityRealEstate">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="5dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="0dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:text="You are"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/youAreRdGrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <RadioButton
+                            android:id="@+id/ownerRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Owner"/>
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Agent"/>
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Builder"/>
+
+                    </RadioGroup>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <EditText
+                            android:id="@+id/nameEdtx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name"
+                            android:paddingStart="5dp"
+                            android:textSize="14sp"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:inputType="textPersonName"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/emailEdtx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:paddingStart="5dp"
+                            android:textSize="14sp"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:inputType="textEmailAddress"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/comp_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Mobile Number"
+                            android:paddingStart="5dp"
+                            android:textSize="14sp"
+                            android:imeOptions="actionDone"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:inputType="number"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:text="What type of property is it?"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:layout_marginTop="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="5dp">
+
+                        <Button
+                            android:id="@+id/btnUnderConstr"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/buttonshape_trans"
+                            android:text="Under Construction"
+                            android:textAllCaps="false"
+                            android:textColor="#8f8f8f"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/btnReadyToMove"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/buttonshape_trans"
+                            android:text="Ready To Move"
+                            android:textAllCaps="false"
+                            android:textColor="#8f8f8f"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Property Type"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_propType"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Property Location"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/propLocationEdtx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Property Location"
+                            android:paddingStart="5dp"
+                            android:textSize="14sp"
+                            android:imeOptions="actionDone"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:inputType="textPostalAddress"
+                            android:drawablePadding="5dp"
+                            android:drawableEnd="@drawable/ic_my_location_black_24dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--<TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:text="Locality/Project"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:layout_marginTop="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"/>-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Bedrooms"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_bedrooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="20dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:text="Bathroom"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/edtxshape"
+                                android:layout_marginTop="10dp"
+                                android:paddingEnd="7dp">
+
+                                <Spinner
+                                    android:id="@+id/bathroomSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:text="Balcony"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/edtxshape"
+                                android:layout_marginTop="10dp"
+                                android:paddingEnd="7dp">
+
+                                <Spinner
+                                    android:id="@+id/balconySpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Floor Details"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/total_floor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Total Number of Floor"
+                            android:paddingStart="5dp"
+                            android:textSize="14sp"
+                            android:imeOptions="actionDone"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:inputType="number"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/edtxshape">
+
+                        <Spinner
+                            android:id="@+id/floorNoSpin"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Furnishing"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/furnishingRdGrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center">
+
+                        <RadioButton
+                            android:id="@+id/unfurnishedRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Unfurnished"/>
+
+                        <RadioButton
+                            android:id="@+id/semiFurnRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Semi-Furnished"/>
+
+                        <RadioButton
+                            android:id="@+id/fullyFurnRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Fully-Furnished"/>
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Property Area"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="10dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp">
+
+                            <EditText
+                                android:id="@+id/propAreaEdtx"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Property Area"
+                                android:paddingStart="5dp"
+                                android:textSize="14sp"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:maxLines="1"
+                                android:inputType="number"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edtxshape"
+                            android:paddingEnd="5dp"
+                            android:layout_marginStart="5dp">
+
+                            <Spinner
+                                android:id="@+id/propAreaspn"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--<TextView
+                        android:id="@+id/moreFilters_Tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="More Filters"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />-->
+
+                    <LinearLayout
+                        android:id="@+id/moreFiltersLinLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <!--<TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Project Type"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <Button
+                                android:id="@+id/btnUnderConstr"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="Under Construction"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/btnReadyToMove"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="Ready To Move"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>-->
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Possesion In"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/fromYearPossesSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/toYearPossesSPin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Amenities"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_amenities"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Society"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/edtxshape"
+                            android:layout_marginTop="10dp">
+
+                            <Spinner
+                                android:id="@+id/societySpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Price You Expect"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/expectedPriceEdtx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Price (in INR)"
+                            android:paddingStart="5dp"
+                            android:textSize="14sp"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:inputType="textEmailAddress"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/pricePerSqft"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Price Per Sqft"
+                            android:paddingStart="5dp"
+                            android:textSize="14sp"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:inputType="textEmailAddress"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="10dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp">
+
+                            <EditText
+                                android:id="@+id/mntnanceChrgsEdtx"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Maintainance Charges (in INR)"
+                                android:paddingStart="5dp"
+                                android:textSize="14sp"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:maxLines="1"
+                                android:inputType="textEmailAddress"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edtxshape"
+                            android:paddingEnd="5dp"
+                            android:layout_marginStart="5dp">
+
+                            <Spinner
+                                android:id="@+id/mntncChrgsTypeSpn"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnPostProp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/tab_background"
+                        android:text="Post Property"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

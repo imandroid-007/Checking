@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ededed"
+    tools:context=".ActivityRealEstate">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:paddingStart="5dp"
+                        android:text="Preferred Location"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <com.pchmn.materialchips.ChipsInput
+                        android:id="@+id/locationsChips"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="0dp"
+                        app:chip_deletable="true"
+                        app:chip_labelColor="@color/colorPrimary"
+                        app:hint="Search Locations"
+                        app:maxHeight="100dp"
+                        app:maxRows="3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:layout_marginTop="0dp"
+                        android:text="You are"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/youAreRdGrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/investorRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Investor" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Agent" />
+
+                    </RadioGroup>
+
+                    <!--<com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <EditText
+                            android:id="@+id/nameEdtx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:paddingStart="5dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/emailEdtx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingStart="5dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/comp_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Mobile Number"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingStart="5dp"
+                                android:singleLine="true"
+                                android:textSize="14sp"
+                                android:layout_marginEnd="5dp"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/edtxshape"
+                            android:text="Verify"
+                            android:gravity="center"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorPrimary"/>
+
+                    </LinearLayout>-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Type of property you want to invest in?"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <!--<LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="5dp">
+
+                        <Button
+                            android:id="@+id/btnResidential"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/buttonshape_trans"
+                            android:text="Residential"
+                            android:textAllCaps="false"
+                            android:textColor="#8f8f8f"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/btnCommercial"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/buttonshape_trans"
+                            android:text="Commercial"
+                            android:textAllCaps="false"
+                            android:textColor="#8f8f8f"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/btnAgricul"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/buttonshape_trans"
+                            android:text="Agricultural"
+                            android:textAllCaps="false"
+                            android:textColor="#8f8f8f"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>-->
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_propType"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <!--<TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:text="Locality/Project"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:layout_marginTop="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"/>-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Furnishing"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/furnishingRdGrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/unfurnishedRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Unfurnished" />
+
+                        <RadioButton
+                            android:id="@+id/semiFurnRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Semi-Furnished" />
+
+                        <RadioButton
+                            android:id="@+id/fullyFurnRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Fully-Furnished" />
+
+                    </RadioGroup>
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/moreFilters_Tv"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:paddingStart="5dp"-->
+<!--                        android:text="More Filters"-->
+<!--                        android:textColor="#000000"-->
+<!--                        android:textSize="15sp" />-->
+
+                    <LinearLayout
+                        android:id="@+id/moreFiltersLinLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Bedrooms"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_bedrooms"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Bathroom"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_bathroom"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Balcony"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_balcony"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Floor Details"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edtxshape"
+                            android:paddingEnd="5dp">
+
+                            <Spinner
+                                android:id="@+id/floorNoSpin"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp" />
+
+                        </RelativeLayout>
+
+
+<!--                        Old Bathroom and Balcony design-->
+
+                        <!--<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="5dp"
+                                    android:text="Bathroom"
+                                    android:textColor="#000000"
+                                    android:textSize="15sp" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/edtxshape"
+                                    android:paddingEnd="7dp">
+
+                                    <Spinner
+                                        android:id="@+id/bathroomSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp" />
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="5dp"
+                                    android:text="Balcony"
+                                    android:textColor="#000000"
+                                    android:textSize="15sp" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/edtxshape"
+                                    android:paddingEnd="7dp">
+
+                                    <Spinner
+                                        android:id="@+id/balconySpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp" />
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>-->
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Property Area"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/propAreaSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/propAreaMinSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/propAreaMaxSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <!--<TextView
+                            android:id="@+id/moreFilters_Tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="More Filters"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />-->
+
+                        <!--                    <LinearLayout-->
+                        <!--                        android:id="@+id/moreFiltersLinLay"-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:orientation="vertical"-->
+                        <!--                        android:visibility="visible">-->
+
+                        <!--<TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Project Type"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <Button
+                                android:id="@+id/btnUnderConstr"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="Under Construction"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/btnReadyToMove"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:text="Ready To Move"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>-->
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Amenities"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_amenities"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Facing"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_facing"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Budget"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/minBudgt_Spin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/maxBudget_Spin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Possession In"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/fromYearPossesSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/toYearPossesSPin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Society"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/edtxshape">
+
+                            <Spinner
+                                android:id="@+id/societySpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:text="Show Only"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <CheckBox
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Verified Projects" />
+
+                        <CheckBox
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="RERA approved properties" />
+
+                        <!--                    </LinearLayout>-->
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnSeeProjects"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/tab_background"
+                        android:text="See Projects"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

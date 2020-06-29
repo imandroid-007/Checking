@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Location.LocationMultSelectionActivity">
+
+    <RelativeLayout
+        android:id="@+id/locationSearchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAddedLocations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="100dp"
+                android:minHeight="0dp"/>
+
+            <Button
+                android:id="@+id/doneBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_centerHorizontal="true"
+                android:text="Done"
+                android:background="@drawable/buttonshape"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edtxshape"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:paddingStart="10dp">
+
+            <EditText
+                android:id="@+id/locationsSearchEdtx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:hint="Search Locations"
+                android:drawableStart="@drawable/ic_search_icon"
+                android:drawablePadding="10dp"
+                android:textSize="13sp"
+                android:background="@null"/>
+
+                <ImageView
+                    android:id="@+id/clearIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/close_icon_gray"
+                    android:padding="5dp"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/speechToTextIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_voice_to_text"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="2dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/currentLocationIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="6dp"
+                    android:src="@drawable/location_icon_darkgray" />
+
+                <TextView
+                    android:id="@+id/currentLocationTv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:text="Current Location"
+                    android:gravity="center_vertical"
+                    android:textSize="13sp"
+                    android:paddingStart="5dp" />
+
+                <RelativeLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/done_icon_gray"/>
+
+                    <ProgressBar
+                        android:id="@+id/progressCurrentLocation"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:text="Recent Searched Locations"
+                android:gravity="center_vertical"
+                android:paddingStart="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:maxHeight="100dp" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Locations"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="18dp"
+                android:textSize="18sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLocations"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

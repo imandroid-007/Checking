@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_layout_homeActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/selected_tab_background">
+
+                    <EditText
+                        android:id="@+id/searchEdtx"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@null"
+                        android:drawableStart="@drawable/ic_search_icon"
+                        android:drawablePadding="10dp"
+                        android:focusable="false"
+                        android:hint="Search Property.."
+                        android:paddingStart="7dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#bababa"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appbar_layout_homeActivity"
+            android:background="#dbdbdb">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/appbar_layout_homeActivity"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical"
+                    android:background="#f5f5f5">
+
+<!--                    android:background="#f5f5f5"-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="0dp"
+                            android:paddingTop="20dp"
+                            android:paddingEnd="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/buyLayoutBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.mikhaellopez.circularimageview.CircularImageView
+                                    android:id="@+id/buyImg"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/ic_launcher_background"
+                                    android:tint="@color/colorPrimary"
+                                    app:civ_border="false"
+                                    app:civ_border_color="#f5f5f5"
+                                    android:elevation="5dp"
+                                    app:civ_circle_color="@android:color/transparent"
+                                    app:tint="@color/colorPrimary" />
+
+                                <TextView
+                                    android:id="@+id/buyTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="Buy"
+                                    android:textColor="@color/black" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/sellLayoutBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.mikhaellopez.circularimageview.CircularImageView
+                                    android:id="@+id/sellImg"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/ic_launcher_background"
+                                    android:tint="@color/colorPrimary"
+                                    app:civ_border="false"
+                                    app:civ_border_color="#f5f5f5"
+                                    android:elevation="5dp"
+                                    app:civ_circle_color="@android:color/transparent" />
+
+                                <TextView
+                                    android:id="@+id/sellTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="Sell"
+                                    android:textColor="@color/black" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/rentLayoutBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.mikhaellopez.circularimageview.CircularImageView
+                                    android:id="@+id/rentImg"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/ic_launcher_background"
+                                    android:tint="@color/colorPrimary"
+                                    app:civ_border="false"
+                                    app:civ_border_color="#f5f5f5"
+                                    android:elevation="5dp"
+                                    app:civ_circle_color="@android:color/transparent" />
+
+                                <TextView
+                                    android:id="@+id/rentTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="Rent"
+                                    android:textColor="@color/black" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="0dp"
+                            android:paddingTop="20dp"
+                            android:paddingEnd="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/investLayoutBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.mikhaellopez.circularimageview.CircularImageView
+                                    android:id="@+id/investImg"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/ic_launcher_background"
+                                    android:tint="@color/colorPrimary"
+                                    app:civ_border="false"
+                                    app:civ_border_color="#f5f5f5"
+                                    android:elevation="5dp"
+                                    app:civ_circle_color="@android:color/transparent" />
+
+                                <TextView
+                                    android:id="@+id/investTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="Invest"
+                                    android:textColor="@color/black" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/projectsLayoutBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.mikhaellopez.circularimageview.CircularImageView
+                                    android:id="@+id/projectsImg"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/ic_launcher_background"
+                                    android:tint="@color/colorPrimary"
+                                    app:civ_border="false"
+                                    app:civ_border_color="#f5f5f5"
+                                    android:elevation="5dp"
+                                    app:civ_circle_color="@android:color/transparent" />
+
+                                <TextView
+                                    android:id="@+id/projectsTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="Projects"
+                                    android:textColor="@color/black" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/exploreLayoutBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+<!--                                <com.github.florent37.shapeofview.shapes.TriangleView-->
+<!--                                    android:layout_width="65dp"-->
+<!--                                    android:layout_height="65dp"-->
+<!--                                    android:elevation="4dp"-->
+<!--                                    app:shape_triangle_percentBottom="0.5"-->
+<!--                                    app:shape_triangle_percentLeft="0"-->
+<!--                                    app:shape_triangle_percentRight="0">-->
+
+                                    <com.mikhaellopez.circularimageview.CircularImageView
+                                        android:id="@+id/exploreImg"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:src="@drawable/ic_launcher_background"
+                                        android:tint="@color/colorPrimary"
+                                        app:civ_border="false"
+                                        app:civ_border_color="#f5f5f5"
+                                        android:elevation="5dp"
+                                        app:civ_circle_color="@android:color/transparent" />
+
+<!--                                </com.github.florent37.shapeofview.shapes.TriangleView>-->
+
+                                <TextView
+                                    android:id="@+id/exploreTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="See All"
+                                    android:textColor="@color/black" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_Home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="true" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+    <!--<include
+        layout="@layout/app_bar_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_home_nox_test"
+        app:menu="@menu/activity_home_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

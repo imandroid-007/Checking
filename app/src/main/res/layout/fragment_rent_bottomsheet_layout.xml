@@ -1,0 +1,1589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rent_bottomsheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    app:behavior_hideable="true"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    tools:context=".ActivityRealEstate">
+
+    <!--    ededed-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/filterTopLin"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:background="#FFC61B"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/closeFiltersLin"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="5dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:padding="3dp"
+                        android:src="@drawable/close_icon_gray"
+                        android:tint="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingStart="7dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:text="Close Filters"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0.7dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white" />
+
+                <!--                android:background="#c0c0c0"-->
+
+                <LinearLayout
+                    android:id="@+id/filterBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Clear All"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="@color/black" />
+            <!--            android:background="#c0c0c0"-->
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/filterTopLin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="45dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/localityTitleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:text="Choose Locations"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="50dp" />-->
+
+                    <!--<com.pchmn.materialchips.ChipsInput
+                        android:id="@+id/locationsChips"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="0dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        app:chip_deletable="true"
+                        app:chip_labelColor="@color/colorPrimary"
+                        app:hint="Search Locations"
+                        app:maxHeight="100dp"
+                        app:maxRows="3" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/addLocationTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:gravity="center_vertical"
+                                android:paddingStart="4dp"
+                                android:text="Click  +  To Select Location"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvApproverOneCC"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/addBtnApproverOne"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:contentDescription="Add to Approver One CC"
+                            android:paddingStart="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:src="@drawable/add_icon" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/agreementTypeTitleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:paddingStart="10dp"
+                        android:text="Agreement Type"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:id="@+id/agreementTypeContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/rentalChkBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Rental" />
+
+                        <CheckBox
+                            android:id="@+id/leaveAndLicenceChkBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:checked="false"
+                            android:text="Leave And Licence (LL)" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tenantsTypeTitleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="10dp"
+                        android:text="Tenants Type"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:id="@+id/tenantsTypeContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="13dp"
+                        android:paddingEnd="10dp"
+                        android:visibility="gone">
+
+                        <Button
+                            android:id="@+id/btnBachelors"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/buttonshape_trans"
+                            android:text="Bachelors"
+                            android:textAllCaps="false"
+                            android:stateListAnimator="@null"
+                            android:elevation="2dp"
+                            android:textColor="#8f8f8f"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/btnFamily"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/buttonshape_trans"
+                            android:text="Family"
+                            android:stateListAnimator="@null"
+                            android:elevation="2dp"
+                            android:textAllCaps="false"
+                            android:textColor="#8f8f8f"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <!--<TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:paddingStart="5dp"
+                        android:text="Property Type"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_propType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />-->
+
+                    <TextView
+                        android:id="@+id/propDetailsTitleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="5dp"
+                        android:text="Property Details"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/propDetailsSpinContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="7dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Cabins"
+                                android:gravity="bottom"
+                                android:textSize="12sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/edtxshape">
+
+                                <Spinner
+                                    android:id="@+id/cabinSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="7dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Conference Rooms"
+                                android:gravity="bottom"
+                                android:textSize="12sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/edtxshape">
+
+                                <Spinner
+                                    android:id="@+id/confRoomSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/receptionContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="7dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="bottom"
+                            android:text="Reception"
+                            android:textSize="12sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/edtxshape">
+
+                            <Spinner
+                                android:id="@+id/receptionSpin"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/typeOfHoseVillaTitleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="10dp"
+                        android:text="Type of House/Villa"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:id="@+id/typeOfHouseVillContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/rccChkBx"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="RCC" />
+
+                        <CheckBox
+                            android:id="@+id/loadBearingChkbx"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:checked="false"
+                            android:text="Load Bearing" />
+
+                        <CheckBox
+                            android:id="@+id/otherChkbx"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Other" />
+
+                    </LinearLayout>
+
+                    <!--<RadioGroup
+                        android:id="@+id/typeOfHouseVillaRdGrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <RadioButton
+                            android:id="@+id/rccRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="RCC" />
+
+                        <RadioButton
+                            android:id="@+id/loadBearingRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:checked="false"
+                            android:text="Load Bearing" />
+
+                        <RadioButton
+                            android:id="@+id/otherRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Other" />
+
+                    </RadioGroup>-->
+
+                    <TextView
+                        android:id="@+id/typeOfNAPlotTitleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:paddingStart="10dp"
+                        android:text="Type of NA Plot"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:id="@+id/typeOfNaPlotContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/residentialChkBx"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:checked="true"
+                            android:text="Recidential" />
+
+                        <CheckBox
+                            android:id="@+id/commercialChkbx"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:checked="false"
+                            android:text="Commercial" />
+
+                        <CheckBox
+                            android:id="@+id/industrialChkbx"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Industrial" />
+
+                    </LinearLayout>
+
+                    <!--<RadioGroup
+                        android:id="@+id/typeOfNAPlotRdGrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone">
+
+                        <RadioButton
+                            android:id="@+id/residentialRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Recidential" />
+
+                        <RadioButton
+                            android:id="@+id/commercialRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Commercial" />
+
+                        <RadioButton
+                            android:id="@+id/industrialRdBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Industrial" />
+
+                    </RadioGroup>-->
+
+                    <TextView
+                        android:id="@+id/bedroomTitleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:text="Bedrooms"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyc_bedrooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp" />
+
+                    <TextView
+                        android:id="@+id/floorDetailsTitleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="10dp"
+                        android:text="Floors"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:visibility="gone"/>
+
+                    <RelativeLayout
+                        android:id="@+id/floorSpinContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edtxshape"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="7dp"
+                        android:visibility="gone">
+
+                        <Spinner
+                            android:id="@+id/floorNoSpin"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp" />
+
+                    </RelativeLayout>
+
+
+                    <!-- <TextView
+                         android:id="@+id/moreFilters_Tv"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="20dp"
+                         android:gravity="center"
+                         android:text="More Filters"
+                         android:textColor="#000000"
+                         android:textSize="15sp" />
+ -->
+                    <LinearLayout
+                        android:id="@+id/moreFiltersLinLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/bathroomTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:text="Bathrooms"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_bathrooms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp" />
+
+                        <TextView
+                            android:id="@+id/propAreaTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Area"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <!--<LinearLayout
+                            android:id="@+id/areaContainerLin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:baselineAligned="false"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/propAreaSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/propAreaMinSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/propAreaMaxSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>-->
+
+                        <LinearLayout
+                            android:id="@+id/areaContainerLin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:baselineAligned="false"
+                            android:orientation="vertical"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/propAreaSpin2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="5dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Min"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:id="@+id/minAreaTv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="100 sqft"
+                                        android:textSize="14sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_weight="1"
+                                    android:gravity="end"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Max"
+                                            android:textColor="@color/black"
+                                            android:textSize="15sp" />
+
+                                        <TextView
+                                            android:id="@+id/maxAreaTv"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="700 sqft"
+                                            android:textSize="14sp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.innovattic.rangeseekbar.RangeSeekBar
+                            android:id="@+id/areaRangeSeekbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:rsb_initialMaxThumbValue="700"
+                            app:rsb_initialMinThumbValue="100"
+                            app:rsb_max="1000"
+                            app:rsb_maxThumbDrawable="@drawable/thumb_circle"
+                            app:rsb_maxThumbOffsetHorizontal="2dp"
+                            app:rsb_minRange="1"
+                            app:rsb_minThumbDrawable="@drawable/thumb_circle"
+                            app:rsb_minThumbOffsetHorizontal="-2dp"
+                            app:rsb_trackColor="#888"
+                            app:rsb_trackSelectedColor="#222"
+                            app:rsb_trackSelectedThickness="4dp"
+                            app:rsb_trackThickness="2dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="5dp"
+                                android:layout_height="40dp">
+
+                                <EditText
+                                    android:id="@+id/minAreaEdtx"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Min Area"
+                                    android:inputType="number"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="5dp"
+                                android:layout_height="40dp">
+
+                                <EditText
+                                    android:id="@+id/maxAreaEdtx"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Max Area"
+                                    android:inputType="number"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/furnishingStsTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Furnishing Status"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:id="@+id/funrnishingContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                            <CheckBox
+                                android:id="@+id/unfurnishedChkbx"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:text="Unfurnished" />
+
+                            <CheckBox
+                                android:id="@+id/semiFurnChkbx"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:text="Semi-Furnished" />
+
+                            <CheckBox
+                                android:id="@+id/fullyFurnChkbx"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:text="Fully-Furnished" />
+
+                        </LinearLayout>
+
+                        <!--<RadioGroup
+                            android:id="@+id/furnishingRdGrp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                            <RadioButton
+                                android:id="@+id/unfurnishedRdBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:text="Unfurnished" />
+
+                            <RadioButton
+                                android:id="@+id/semiFurnRdBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:text="Semi-Furnished" />
+
+                            <RadioButton
+                                android:id="@+id/fullyFurnRdBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:text="Fully-Furnished" />
+
+                        </RadioGroup>-->
+
+                        <TextView
+                            android:id="@+id/budgetTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Budget"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:id="@+id/budgetContainerLin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                            <!--  <TextView
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginTop="20dp"
+                                  android:paddingStart="10dp"
+                                  android:paddingEnd="5dp"
+                                  android:text="0"
+                                  android:id="@+id/budget_value"
+                                  android:textColor="#000000"
+                                  android:textSize="15sp" />
+
+                              <SeekBar
+                                  android:id="@+id/seekBar"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginEnd="0dp"
+                                  android:layout_marginStart="0dp"
+                                  android:layout_marginTop="10dp"
+                                  app:layout_constraintEnd_toEndOf="parent"
+                                  app:layout_constraintStart_toStartOf="parent"
+                                  app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <!--   <com.innovattic.rangeseekbar.RangeSeekBar
+                                   android:id="@+id/rangeSeekBar"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_marginTop="10dp"
+                                   app:rsb_minRange="0"
+                                   app:rsb_max="100"
+                                   app:rsb_trackSelectedRoundedCaps="true"
+                                   android:background="@color/colorAccent" />-->
+
+                            <!-- <com.innovattic.rangeseekbar.RangeSeekBar
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 app:rsb_initialMaxThumbValue="40"
+                                 app:rsb_initialMinThumbValue="20"
+                                 app:rsb_maxThumbDrawable="@drawable/thumb_circle"
+                                 app:rsb_maxThumbOffsetHorizontal="2dp"
+                                 app:rsb_minRange="10"
+                                 app:rsb_minThumbDrawable="@drawable/thumb_circle"
+                                 app:rsb_minThumbOffsetHorizontal="-2dp"
+                                 app:rsb_trackColor="#888"
+                                 app:rsb_trackSelectedColor="#222"
+                                 app:rsb_trackSelectedThickness="4dp"
+                                 app:rsb_trackThickness="2dp" />-->
+
+                            <!-- sssssssssssssssssssssssssss -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="5dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Min Budget"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:id="@+id/minBudgetTv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="10 Thousand"
+                                        android:textSize="14sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_weight="1"
+                                    android:gravity="end"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Max Budget"
+                                            android:textColor="@color/black"
+                                            android:textSize="15sp" />
+
+                                        <TextView
+                                            android:id="@+id/maxBudgetTv"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="25 Thousand"
+                                            android:textSize="14sp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <com.innovattic.rangeseekbar.RangeSeekBar
+                                android:id="@+id/rangeSeekbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:rsb_initialMaxThumbValue="700"
+                                app:rsb_initialMinThumbValue="100"
+                                app:rsb_max="300"
+                                app:rsb_maxThumbDrawable="@drawable/thumb_circle"
+                                app:rsb_maxThumbOffsetHorizontal="2dp"
+                                app:rsb_minRange="1"
+                                app:rsb_minThumbDrawable="@drawable/thumb_circle"
+                                app:rsb_minThumbOffsetHorizontal="-2dp"
+                                app:rsb_trackColor="#888"
+                                app:rsb_trackSelectedColor="#222"
+                                app:rsb_trackSelectedThickness="4dp"
+                                app:rsb_trackThickness="2dp" />
+
+                            <!--<com.innovattic.rangeseekbar.RangeSeekBar
+                                android:id="@+id/rangeSeekbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="5dp"
+                                app:rsb_initialMaxThumbValue="10"
+                                app:rsb_max="400"
+                                app:rsb_maxThumbDrawable="@drawable/thumb_circle"
+                                app:rsb_maxThumbOffsetHorizontal="8dp"
+                                app:rsb_minRange="10"
+                                app:rsb_minThumbDrawable="@drawable/thumb_circle"
+                                app:rsb_minThumbOffsetHorizontal="-8dp"
+                                app:rsb_sidePadding="20dp"
+                                app:rsb_touchRadius="10dp"
+                                app:rsb_trackColor="#e0e1e5"
+                                app:rsb_trackRoundedCaps="true"
+                                app:rsb_trackSelectedColor="#a8d5f5"
+                                app:rsb_trackSelectedRoundedCaps="true"
+                                app:rsb_trackSelectedThickness="20dp"
+                                app:rsb_trackThickness="36dp" />-->
+
+                        </LinearLayout>
+
+
+
+                        <TextView
+                            android:id="@+id/depositTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Deposit"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:id="@+id/depositContainerLin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="5dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Min Deposite"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:id="@+id/minDepositTv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="10 Thousand"
+                                        android:textSize="14sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_weight="1"
+                                    android:gravity="end"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Max Deposit"
+                                            android:textColor="@color/black"
+                                            android:textSize="15sp" />
+
+                                        <TextView
+                                            android:id="@+id/maxDepositTv"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="25 Thousand"
+                                            android:textSize="14sp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <com.innovattic.rangeseekbar.RangeSeekBar
+                                android:id="@+id/rangeDepositSeekbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:rsb_initialMaxThumbValue="25"
+                                app:rsb_initialMinThumbValue="10"
+                                app:rsb_max="100"
+                                app:rsb_maxThumbDrawable="@drawable/thumb_circle"
+                                app:rsb_maxThumbOffsetHorizontal="2dp"
+                                app:rsb_minRange="1"
+                                app:rsb_minThumbDrawable="@drawable/thumb_circle"
+                                app:rsb_minThumbOffsetHorizontal="-2dp"
+                                app:rsb_trackColor="#888"
+                                app:rsb_trackSelectedColor="#222"
+                                app:rsb_trackSelectedThickness="4dp"
+                                app:rsb_trackThickness="2dp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/rentLeaseAmtTypeTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Deposit Amount"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp">
+
+                            <CheckBox
+                                android:id="@+id/refundableChkbox"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Refundable" />
+
+                            <CheckBox
+                                android:id="@+id/nonRefundableChkBox"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Non-Refundable" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/posseionTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Possession In (Tentative period)"
+                            android:textColor="#000000"
+                            android:textSize="15sp"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/possessionContainerLin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="5dp"
+                            android:visibility="visible">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/fromYearPossesSpin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edtxshape"
+                                android:paddingEnd="5dp">
+
+                                <Spinner
+                                    android:id="@+id/toYearPossesSPin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/societyTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Society"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:id="@+id/societySpinContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/edtxshape">
+
+                            <Spinner
+                                android:id="@+id/societySpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/facingTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:text="Facing"
+                            android:textColor="#000000"
+                            android:textSize="15sp"
+                            android:visibility="gone" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_facing"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/amenitiesTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Amenities"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_amenities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:id="@+id/postedSinceTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Posted Since"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyc_postSince"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:id="@+id/postedByTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Posted By"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:id="@+id/postedByContainerLin"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                            <Button
+                                android:id="@+id/btnPostByAgent"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:elevation="2dp"
+                                android:stateListAnimator="@null"
+                                android:text="Agent"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/btnPostByOwner"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:elevation="2dp"
+                                android:stateListAnimator="@null"
+                                android:text="Owner"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/btnPostByBuilder"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="2dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/buttonshape_trans"
+                                android:elevation="2dp"
+                                android:stateListAnimator="@null"
+                                android:text="Builder"
+                                android:textAllCaps="false"
+                                android:textColor="#8f8f8f"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Show Only"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <CheckBox
+                            android:id="@+id/exclusivePropsChkbx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:paddingEnd="5dp"
+                            android:text="Exclusive properties" />
+
+                        <CheckBox
+                            android:id="@+id/verifiedPropsChkbx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:text="Show only Verified properties" />
+
+                        <CheckBox
+                            android:id="@+id/propsWithDiscsAndOffersChkbx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:text="Properties with Discounts and Offers" />
+
+                    </LinearLayout>
+
+                    <!--   <Button
+                           android:id="@+id/seePropBtn"
+                           android:layout_width="match_parent"
+                           android:layout_height="40dp"
+                           android:layout_marginTop="20dp"
+                           android:layout_marginBottom="10dp"
+                           android:background="@drawable/tab_background"
+                           android:text="See 2041 Properies"
+                           android:textAllCaps="false"
+                           android:textColor="@color/white"
+                           android:textSize="18sp" />-->
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/applyFilterTv"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="Apply Filters"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

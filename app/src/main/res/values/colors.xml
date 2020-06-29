@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#BA275E</color>  <!--BA275E-->
+    <color name="colorPrimaryDark">#8E0438</color>  <!--8E0438-->
+    <color name="colorPrimaryTwo">#6fb98f</color>
+    <color name="colorAccent">#F9C22C</color>  <!--f2bf16-->
+
+    <color name="colorSelected">#f0d1dc</color>
+
+    <color name="transparent">#00000000</color>
+
+<!--    <color name="colorPrimary">#2c7873</color>-->
+<!--    <color name="colorPrimaryDark">#004445</color>-->
+<!--    <color name="colorPrimaryTwo">#6fb98f</color>-->
+<!--    <color name="colorAccent">#ffd800</color>-->
+
+    <color name="light_gray">#d3d3d3</color>
+    <color name="white">#ffffff</color>
+    <color name="very_light_gray">#f4f2f2</color>
+    <color name="pink">#f0649e</color>
+    <color name="orange">#f28381</color>
+    <color name="black">#000000</color>
+    <color name="gray">#37474F</color>
+
+
+    <color name="darkGrey">#6c6c6c</color>
+    <color name="green">#43ad42</color>
+    <color name="numColor">#019b77</color>
+    <color name="green_success_color">#7AC043</color>
+    <color name="red_failure_color">#F13F40</color>
+
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
